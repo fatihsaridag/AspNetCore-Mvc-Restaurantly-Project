@@ -1,0 +1,15 @@
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\bin\Debug\net5.0\Restaurantly.Entity.deps.json
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\bin\Debug\net5.0\Restaurantly.Entity.dll
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\bin\Debug\net5.0\Restaurantly.Entity.pdb
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\Restaurantly.Entity.csproj.AssemblyReference.cache
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\Restaurantly.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\Restaurantly.Entity.AssemblyInfoInputs.cache
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\Restaurantly.Entity.AssemblyInfo.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\Restaurantly.Entity.csproj.CoreCompileInputs.cache
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\Restaurantly.Entity.dll
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\refint\Restaurantly.Entity.dll
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\Restaurantly.Entity.pdb
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\ref\Restaurantly.Entity.dll
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\bin\Debug\net5.0\Restaurantly.Shared.dll
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\bin\Debug\net5.0\Restaurantly.Shared.pdb
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.Entity\obj\Debug\net5.0\Restaurantly.Entity.csproj.CopyComplete
