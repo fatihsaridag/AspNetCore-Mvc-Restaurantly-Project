@@ -14,8 +14,9 @@ namespace Restaurantly.Entity.Entity
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Picture { get; set; }
+        public string Phone { get; set; }
         public DateTime Date { get; set; }
+        public DateTime Time { get; set; }
         public int Count { get; set; }
         public string Message { get; set; }
     }

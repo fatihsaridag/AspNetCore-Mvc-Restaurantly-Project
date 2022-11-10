@@ -1,0 +1,50 @@
+﻿@model MenuListDto
+
+
+
+@{
+    ViewData["Title"] = "MenuList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="menu" class="menu section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>MENU</h2>
+            <p>Bizim Lezzetli Menülerimiz</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="menu-flters">
+                    <li data-filter="*" class="filter-active">Tatlı</li>
+                    <li data-filter=".filter-starters">Çorba</li>
+                    <li data-filter=".filter-salads">Ana Yemek</li>
+                    <li data-filter=".filter-salads">Salata</li>
+                    <li data-filter=".filter-specialty">Özel</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+            @foreach (var menu in Model.Menus)
+            {
+                <div class="col-lg-6 menu-item filter-starters">
+                    <img src="@menu.Picture" class="menu-img" alt="">
+                    <div class="menu-content">
+                        <a href="#">@menu.Name</a><span>@menu.Price ₺</span>
+                    </div>
+                    <div class="menu-ingredients">
+                        @menu.Description
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+
+    </div>
+</section><!-- End Menu Section -->
