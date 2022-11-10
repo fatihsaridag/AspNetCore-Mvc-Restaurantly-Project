@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "MsvNH235uN9+VU+OSqVWfz4wGbq2P5XZrw4RuL/J+eCHnt/kvDcXAgGcPiJU8V1Fk7fXKRjPRnIPI0FEhm5Y6Q==",
+  "dgSpecHash": "AKay2x2mvqfoHUENd9QpCmXzaGueUqhMeUBK8kduzcKM9nvgYN8UQ+enTJc2qHVSZw0ewygNGnOLg9aKDfN+UA==",
   "success": true,
   "projectFilePath": "C:\\Users\\fatih\\source\\repos\\Restaurantly\\Restaurantly.Services\\Restaurantly.Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\fatih\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.10\\microsoft.aspnetcore.cryptography.internal.5.0.10.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.10\\microsoft.aspnetcore.cryptography.keyderivation.5.0.10.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.10\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.10.nupkg.sha512",
-    "C:\\Users\\fatih\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\fatih\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
     "C:\\Users\\fatih\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",

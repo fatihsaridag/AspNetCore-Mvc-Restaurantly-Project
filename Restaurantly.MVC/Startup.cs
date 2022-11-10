@@ -4,6 +4,12 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Restaurantly.Data.Abstract;
+using Restaurantly.Data.Concrete;
+using Restaurantly.Data.EntityFramework.Contexts;
+using Restaurantly.Services.Abstract;
+using Restaurantly.Services.AutoMapper.Profiles;
+using Restaurantly.Services.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +29,14 @@ namespace Restaurantly.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<RestaurantlyContext>();
+            services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAutoMapper(typeof(AboutProfile));
+            services.AddMvc();
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
+            services.AddScoped<IAboutService, AboutManager>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,9 +60,15 @@ namespace Restaurantly.MVC
 
             app.UseAuthorization();
 
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapRazorPages();
+            //});
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
