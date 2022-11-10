@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("_HeadPartialView")
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+
+  <!-- ======= Header ======= -->
+  @await Html.PartialAsync("_NavbarPartialView")
+  <!-- ======= Hero Section ======= -->
+  @await Html.PartialAsync("_SliderPartialView")
+
+  @RenderBody()
+  <!-- ======= Footer ======= -->
+  <!-- ======= Footer ======= -->
+  @await Html.PartialAsync("_FooterPartialView")
+
+  @await Html.PartialAsync("_ScriptPartialView")
+
+</body>
+
+</html>
+
