@@ -32,11 +32,13 @@ namespace Restaurantly.MVC
             services.AddDbContext<RestaurantlyContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddAutoMapper(typeof(AboutProfile));
+            services.AddAutoMapper(typeof(AboutProfile),typeof(ReservationProfile));
             services.AddMvc();
             services.AddScoped<IUnitOfWork,UnitOfWork>();
+            services.AddScoped<IMenuService,MenuManager>();
             services.AddScoped<IAboutService, AboutManager>();
-
+            services.AddScoped<ISpecialService, SpecialManager>();
+            services.AddScoped<IReservationService, ReservationManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

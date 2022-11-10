@@ -171,3 +171,6 @@ C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Shared\_FooterPartialView.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Shared\_ScriptPartialView.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Home\MenuList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Home\SpecialList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Home\Reservation.cshtml.g.cs
