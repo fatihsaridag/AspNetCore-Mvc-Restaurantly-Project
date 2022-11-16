@@ -10,13 +10,17 @@ namespace Restaurantly.MVC.Controllers
         private readonly IMenuService _menuService;
         private readonly ISpecialService _specialService;
         private readonly IReservationService _reservationService;
+        private readonly ITestimonialService _testimonialService;
 
-        public HomeController(IAboutService aboutService, IMenuService menuService, ISpecialService specialService, IReservationService reservationService)
+
+        public HomeController(IAboutService aboutService, IMenuService menuService, ISpecialService specialService, IReservationService reservationService, ITestimonialService testimonialService)
         {
             _aboutService = aboutService;
             _menuService = menuService;
             _specialService = specialService;
             _reservationService = reservationService;
+            _testimonialService = testimonialService;
+            _testimonialService = testimonialService;
         }
         public IActionResult Index()
         {
@@ -57,6 +61,11 @@ namespace Restaurantly.MVC.Controllers
                  return View(reservationAddDto);
         }
 
+        public IActionResult Testimonials()
+        {
+            var testimonialListDto = _testimonialService.GetAll();
+            return View(testimonialListDto);
+        }
 
     }
 }
