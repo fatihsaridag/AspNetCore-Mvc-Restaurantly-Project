@@ -9,6 +9,8 @@ namespace Restaurantly.Entity.Entity
 {
     public class AppUser : IdentityUser<int>
     {
+        public string FirstName { get; set; }
+        public string SurName { get; set; }
         public string Picture { get; set; }
         public string Job { get; set; }
     }

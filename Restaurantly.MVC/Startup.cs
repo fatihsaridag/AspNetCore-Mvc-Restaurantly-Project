@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Restaurantly.Data.Abstract;
 using Restaurantly.Data.Concrete;
 using Restaurantly.Data.EntityFramework.Contexts;
+using Restaurantly.Entity.Entity;
 using Restaurantly.Services.Abstract;
 using Restaurantly.Services.AutoMapper.Profiles;
 using Restaurantly.Services.Concrete;
@@ -39,6 +41,10 @@ namespace Restaurantly.MVC
             services.AddScoped<IAboutService, AboutManager>();
             services.AddScoped<ISpecialService, SpecialManager>();
             services.AddScoped<IReservationService, ReservationManager>();
+            services.AddScoped<ITestimonialService, TestimonialManager>();
+
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<RestaurantlyContext>().AddEntityFrameworkStores<RestaurantlyContext>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

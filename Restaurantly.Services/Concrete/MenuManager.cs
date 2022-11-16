@@ -1,4 +1,5 @@
-﻿using Restaurantly.Data.Abstract;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Restaurantly.Data.Abstract;
 using Restaurantly.Entity.Dtos;
 using Restaurantly.Services.Abstract;
 using System;
@@ -36,7 +37,7 @@ namespace Restaurantly.Services.Concrete
             var menus = _unitOfWork.Menus.GetList();
             return new MenuListDto
             {
-                Menus= menus
+                Menus = menus
             };
         }
 
