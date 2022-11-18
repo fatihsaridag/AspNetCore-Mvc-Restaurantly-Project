@@ -45,6 +45,15 @@ namespace Restaurantly.Services.Concrete
             };
         }
 
+        public TestimonialListDto GetListWithTestimonialsByUser()
+        {
+            var testimonials = _unitOfWork.Testimonials.GetListWithTestimonialsByUser();
+            return new TestimonialListDto
+            {
+                Testimonials = testimonials
+            };
+        }
+
         public void Update(TestimonialUpdateDto dto)
         {
             throw new NotImplementedException();

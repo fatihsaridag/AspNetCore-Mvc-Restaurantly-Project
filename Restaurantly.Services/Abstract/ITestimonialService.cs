@@ -14,5 +14,6 @@ namespace Restaurantly.Services.Abstract
         void Add(TestimonialAddDto dto);
         void Update(TestimonialUpdateDto dto);
         void Delete(int id);
+        TestimonialListDto GetListWithTestimonialsByUser();
     }
 }

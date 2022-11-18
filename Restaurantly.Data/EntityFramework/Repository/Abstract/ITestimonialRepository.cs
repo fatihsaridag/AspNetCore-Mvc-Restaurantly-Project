@@ -10,5 +10,6 @@ namespace Restaurantly.Data.EntityFramework.Repository.Abstract
 {
     public interface ITestimonialRepository : IGenericRepository<Testimonial>
     {
+        List<Testimonial> GetListWithTestimonialsByUser();
     }
 }

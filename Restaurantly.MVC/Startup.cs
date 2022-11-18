@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -43,7 +44,31 @@ namespace Restaurantly.MVC
             services.AddScoped<IReservationService, ReservationManager>();
             services.AddScoped<ITestimonialService, TestimonialManager>();
 
-            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<RestaurantlyContext>().AddEntityFrameworkStores<RestaurantlyContext>();
+            services.AddIdentity<AppUser, AppRole>(opts =>
+            {
+                opts.User.RequireUniqueEmail = true;
+                opts.User.AllowedUserNameCharacters = "abcçdefgðhýijklmnoöpqrsþtuüvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._";
+
+
+            }).AddEntityFrameworkStores<RestaurantlyContext>();
+
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = new PathString("/Login/SignIn");
+                options.LogoutPath = new PathString("/Home/Logout");
+                options.AccessDeniedPath = new PathString("/Home/AccessDenied");
+                options.Cookie = new CookieBuilder
+                {
+                    Name = "Restaurantly",
+                    HttpOnly = true,
+                    SameSite = SameSiteMode.Strict,
+                    SecurePolicy = CookieSecurePolicy.SameAsRequest
+                };
+                options.SlidingExpiration = true;
+                options.ExpireTimeSpan = System.TimeSpan.FromDays(7);
+            });
+
 
         }
 
@@ -65,7 +90,7 @@ namespace Restaurantly.MVC
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             //app.UseEndpoints(endpoints =>

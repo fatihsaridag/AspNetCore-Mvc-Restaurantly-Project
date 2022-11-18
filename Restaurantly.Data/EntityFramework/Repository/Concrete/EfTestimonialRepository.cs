@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Restaurantly.Data.EntityFramework.Contexts;
 using Restaurantly.Data.EntityFramework.Repository.Abstract;
 using Restaurantly.Entity.Entity;
 using Restaurantly.Shared.Data.Repository.Concrete;
@@ -14,6 +15,14 @@ namespace Restaurantly.Data.EntityFramework.Repository.Concrete
     {
         public EfTestimonialRepository(DbContext context) : base(context)
         {
+        }
+
+        public List<Testimonial> GetListWithTestimonialsByUser()
+        {
+            using(var context = new RestaurantlyContext())
+            {
+                return context.Testimonials.Include(x => x.AppUser).ToList();
+            }
         }
     }
 }

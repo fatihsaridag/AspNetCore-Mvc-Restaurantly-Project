@@ -68,20 +68,46 @@ namespace Restaurantly.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(userLoginModel.UserName, userLoginModel.Password, false, true);
-                if (result.Succeeded)
+
+                AppUser user = await _userManager.FindByNameAsync(userLoginModel.UserName);
+                if (user != null)
                 {
-                    return RedirectToAction("Index","Home");
+                    await _signInManager.SignOutAsync();
+                    var result = await _signInManager.PasswordSignInAsync(user, userLoginModel.Password,false, false);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        return View("SignIn", "Login");
+                    }
+
                 }
                 else
                 {
-                    return View("SignIn", "Login");
+                    ModelState.AddModelError(nameof(userLoginModel.UserName), "Geçersiz kullanıcı adı veya şifresi");
                 }
+
+
+                //var result = await _signInManager.PasswordSignInAsync(userLoginModel.UserName, userLoginModel.Password, false, true);
+                //if (result.Succeeded)
+                //{
+                //    return RedirectToAction("Index","Home");
+                //}
+                //else
+                //{
+                //    return View("SignIn", "Login");
+                //}
             }
             return View(userLoginModel);
         }
 
-
+        public async Task<IActionResult> SignOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
 
     }
 }

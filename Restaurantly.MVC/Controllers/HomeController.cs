@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Restaurantly.Entity.Dtos;
+using Restaurantly.Entity.Entity;
 using Restaurantly.Services.Abstract;
+using System.Threading.Tasks;
 
 namespace Restaurantly.MVC.Controllers
 {
@@ -11,9 +15,11 @@ namespace Restaurantly.MVC.Controllers
         private readonly ISpecialService _specialService;
         private readonly IReservationService _reservationService;
         private readonly ITestimonialService _testimonialService;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
 
 
-        public HomeController(IAboutService aboutService, IMenuService menuService, ISpecialService specialService, IReservationService reservationService, ITestimonialService testimonialService)
+        public HomeController(IAboutService aboutService, IMenuService menuService, ISpecialService specialService, IReservationService reservationService, ITestimonialService testimonialService,SignInManager<AppUser> signInManager , UserManager<AppUser> userManager)
         {
             _aboutService = aboutService;
             _menuService = menuService;
@@ -21,6 +27,8 @@ namespace Restaurantly.MVC.Controllers
             _reservationService = reservationService;
             _testimonialService = testimonialService;
             _testimonialService = testimonialService;
+            _signInManager = signInManager;
+            _userManager= userManager;
         }
         public IActionResult Index()
         {
@@ -63,8 +71,8 @@ namespace Restaurantly.MVC.Controllers
 
         public IActionResult Testimonials()
         {
-            var testimonialListDto = _testimonialService.GetAll();
-            return View(testimonialListDto);
+            var values = _testimonialService.GetListWithTestimonialsByUser();
+            return View(values);
         }
 
     }
