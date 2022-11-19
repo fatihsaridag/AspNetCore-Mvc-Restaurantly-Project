@@ -17,9 +17,12 @@ namespace Restaurantly.MVC.Controllers
         private readonly ITestimonialService _testimonialService;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IChefService _chefService;
+        private readonly IContactService _contactService;
+        private readonly IHomeService _homeService;
 
 
-        public HomeController(IAboutService aboutService, IMenuService menuService, ISpecialService specialService, IReservationService reservationService, ITestimonialService testimonialService,SignInManager<AppUser> signInManager , UserManager<AppUser> userManager)
+        public HomeController(IAboutService aboutService, IMenuService menuService, ISpecialService specialService, IReservationService reservationService, ITestimonialService testimonialService,SignInManager<AppUser> signInManager , UserManager<AppUser> userManager , IChefService chefService, IContactService contactService, IHomeService homeService)
         {
             _aboutService = aboutService;
             _menuService = menuService;
@@ -29,10 +32,14 @@ namespace Restaurantly.MVC.Controllers
             _testimonialService = testimonialService;
             _signInManager = signInManager;
             _userManager= userManager;
+            _chefService = chefService;
+            _contactService = contactService;
+            _homeService = homeService;
         }
         public IActionResult Index()
         {
-            return View();
+            var values = _homeService.GetAll();
+            return View(values);
         }
 
         
@@ -73,6 +80,27 @@ namespace Restaurantly.MVC.Controllers
         {
             var values = _testimonialService.GetListWithTestimonialsByUser();
             return View(values);
+        }
+
+
+        public IActionResult ChefsList()
+        {
+            var chefListDto = _chefService.GetAll();
+            return View(chefListDto);
+        }
+
+
+        [HttpGet]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Contact(ContactAddDto contactAddDto)
+        {
+           _contactService.Add(contactAddDto);
+            return View(contactAddDto);
         }
 
     }
