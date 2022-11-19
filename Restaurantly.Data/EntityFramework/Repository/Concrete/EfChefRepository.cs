@@ -15,5 +15,6 @@ namespace Restaurantly.Data.EntityFramework.Repository.Concrete
         public EfChefRepository(DbContext context) : base(context)
         {
         }
+
     }
 }

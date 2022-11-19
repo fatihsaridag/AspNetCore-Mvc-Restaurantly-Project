@@ -2,19 +2,18 @@
 <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-        <h1 class="logo me-auto me-lg-0"><a href="index.html">Restaruantly</a></h1>
+        <h1 class="logo me-auto me-lg-0"><a href="index.html">Sarıdağ Restaruant</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Anasayfa</a></li>
-                <li><a class="nav-link scrollto" href="#about">Hakkımızda</a></li>
-                <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
-                <li><a class="nav-link scrollto" href="#specials">Özel Menüler</a></li>
-                <li><a class="nav-link scrollto" href="#chefs">Şeflerimiz</a></li>
-                <li><a class="nav-link scrollto" href="#gallery">Galeri</a></li>
-                <li><a class="nav-link scrollto" href="#contact">İletişim</a></li>
+                <li><a class="nav-link scrollto " asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+                <li><a class="nav-link scrollto" asp-controller="Home" asp-action="About">Hakkımızda</a></li>
+                <li><a class="nav-link scrollto" asp-controller="Home" asp-action="MenuList">Menu</a></li>
+                <li><a class="nav-link scrollto" asp-controller="Home" asp-action="SpecialList">Özel Menüler</a></li>
+                <li><a class="nav-link scrollto" asp-controller="Home" asp-action="ChefsList">Şeflerimiz</a></li>
+                <li><a class="nav-link scrollto" asp-controller="Home" asp-action="Contact">İletişim</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
