@@ -31,22 +31,41 @@ namespace Restaurantly.Services.Concrete
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var entity = _unitOfWork.Reservations.GetById(id);
+            _unitOfWork.Reservations.Delete(entity);
+            _unitOfWork.SaveChanges();
         }
 
-        public ReservationDto Get(int aboutId)
+        public ReservationDto Get(int reservationId)
         {
-            throw new NotImplementedException();
+            var reservation = _unitOfWork.Reservations.GetById(reservationId);
+            return new ReservationDto
+            {
+                Reservation = reservation
+            };
         }
 
         public ReservationListDto GetAll()
         {
-            throw new NotImplementedException();
+            var reservationsEntity = _unitOfWork.Reservations.GetList();
+            return new ReservationListDto
+            {
+                Reservations = reservationsEntity
+            };
+        }
+
+        public ReservationUpdateDto GetReservationUpdateDtoAsync(int id)
+        {
+            var reservation = _unitOfWork.Reservations.GetById(id);
+            var reservationUpdatedDto = _mapper.Map<ReservationUpdateDto>(reservation);
+            return reservationUpdatedDto;
         }
 
         public void Update(ReservationUpdateDto dto)
         {
-            throw new NotImplementedException();
+            var reservation = _mapper.Map<Reservation>(dto);
+            _unitOfWork.Reservations.Update(reservation);
+            _unitOfWork.SaveChanges();
         }
     }
 }

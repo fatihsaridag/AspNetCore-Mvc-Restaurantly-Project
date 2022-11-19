@@ -179,3 +179,13 @@ C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Login\SignIn.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Home\ChefsList.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminHeadPartial.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminScriptPartial.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminSpinnerPartial.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminSideBarPartial.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminNavbarPartial.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reservation\ReservationList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reservation\ReservationEdit.cshtml.g.cs

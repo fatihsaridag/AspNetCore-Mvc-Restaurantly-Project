@@ -11,12 +11,12 @@ namespace Restaurantly.Services.Abstract
 {
     public interface IReservationService
     {
-     
-
-        ReservationDto Get(int aboutId);
+        ReservationDto Get(int reservationId);
         ReservationListDto GetAll();
         void Add(ReservationAddDto dto);
         void Update(ReservationUpdateDto dto);
         void Delete(int id);
+        ReservationUpdateDto GetReservationUpdateDtoAsync(int id);
+
     }
 }

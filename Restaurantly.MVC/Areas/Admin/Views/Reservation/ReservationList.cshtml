@@ -1,0 +1,41 @@
+﻿@model ReservationListDto
+
+@{
+    ViewData["Title"] = "ReservationList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+ 
+<table class="table table-bordered table-striped mt-4 ">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Tarih</th>
+            <th>Kişi Sayısı</th>
+            <th>Mesaj</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reservations)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.Date.ToString()</td>
+            <td>@item.Count</td>
+            <td>@item.Message</td>
+            <td><a asp-area="Admin" asp-controller="Reservation" asp-action="ReservationEdit" asp-route-id="@item.Id" class="btn btn-outline-primary">Düzenle</a></td>
+            <td><a asp-area="Admin" asp-controller="Reservation" asp-action="ReservationDelete" asp-route-id="@item.Id" class="btn btn-outline-danger">Sil</a></td>
+     
+        </tr>
+            
+        }
+    </tbody>
+</table>
