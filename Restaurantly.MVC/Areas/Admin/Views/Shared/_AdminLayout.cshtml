@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("_AdminHeadPartial")
+
+<body>
+        <!-- Spinner Start -->
+        @await Html.PartialAsync("_AdminSpinnerPartial")
+        @await Html.PartialAsync("_AdminSideBarPartial")
+        <div class="content">
+        @await Html.PartialAsync("_AdminNavbarPartial")
+        <div class="container">
+            @RenderBody()
+
+        </div>
+
+        </div>
+
+    <!-- JavaScript Libraries -->
+@await Html.PartialAsync("_AdminScriptPartial")
+</body>
+
+</html>
