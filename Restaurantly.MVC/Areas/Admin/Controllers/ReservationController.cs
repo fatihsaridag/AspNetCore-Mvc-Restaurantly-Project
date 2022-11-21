@@ -43,5 +43,20 @@ namespace Restaurantly.MVC.Areas.Admin.Controllers
             return RedirectToAction("ReservationList");
         }
 
+        [HttpGet]
+        public IActionResult ReservationAdd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ReservationAdd(ReservationAddDto reservationAddDto)
+        {
+            _reservationService.Add(reservationAddDto);
+            return RedirectToAction("ReservationList");
+        }
+
+
+
     }
 }

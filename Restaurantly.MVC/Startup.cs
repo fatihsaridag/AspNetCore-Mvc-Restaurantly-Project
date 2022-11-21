@@ -35,7 +35,7 @@ namespace Restaurantly.MVC
             services.AddDbContext<RestaurantlyContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddAutoMapper(typeof(AboutProfile),typeof(ReservationProfile),typeof(ContactProfile));
+            services.AddAutoMapper(typeof(AboutProfile),typeof(ReservationProfile),typeof(ContactProfile),typeof(MenuProfile),typeof(SpecialProfile));
             services.AddMvc();
             services.AddScoped<IUnitOfWork,UnitOfWork>();
             services.AddScoped<IMenuService,MenuManager>();

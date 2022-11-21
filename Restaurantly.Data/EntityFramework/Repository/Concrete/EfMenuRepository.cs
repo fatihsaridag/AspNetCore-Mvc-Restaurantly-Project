@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Restaurantly.Data.EntityFramework.Contexts;
 using Restaurantly.Data.EntityFramework.Repository.Abstract;
 using Restaurantly.Entity.Entity;
 using Restaurantly.Shared.Data.Repository.Concrete;
@@ -14,6 +15,14 @@ namespace Restaurantly.Data.EntityFramework.Repository.Concrete
     {
         public EfMenuRepository(DbContext context) : base(context)
         {
+        }
+
+        public List<Menu> GetListWithMenuByCategory()
+        {
+            using (var context = new RestaurantlyContext())
+            {
+                return context.Menus.Include(x => x.Category).ToList();
+            } 
         }
     }
 }

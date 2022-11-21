@@ -1,0 +1,43 @@
+﻿@model SpecialListDto
+
+
+@{
+    ViewData["Title"] = "SpecialList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+ 
+
+
+<table class="table table-bordered table-striped mt-4 ">
+    <h3 class="text-primary text-center mt-3"> Özel Menülerin Listesi</h3>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Adı</th>
+            <th>Başlığı</th>
+            <th>Açıklaması</th>
+            <th>Resmi</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+     
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Specials)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Picture</td>
+                <td><a asp-area="Admin" asp-controller="Special" asp-action="SpecialEdit" asp-route-id="@item.Id" class="btn btn-outline-primary">Düzenle</a></td>
+                <td><a asp-area="Admin" asp-controller="Special" asp-action="SpecialDelete" asp-route-id="@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<a asp-area="Admin" asp-controller="Special" asp-action="SpecialAdd" class="btn btn-outline-success">Yeni Özel Menü Ekle</a>

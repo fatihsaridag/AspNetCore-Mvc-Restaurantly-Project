@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Restaurantly.Data.Abstract;
 using Restaurantly.Entity.Dtos;
+using Restaurantly.Entity.Entity;
 using Restaurantly.Services.Abstract;
 using System;
 using System.Collections.Generic;
@@ -24,17 +25,25 @@ namespace Restaurantly.Services.Concrete
         }
         public void Add(SpecialAddDto dto)
         {
-            throw new NotImplementedException();
+            var specialEntity = _mapper.Map<Special>(dto);
+            _unitOfWork.Specials.Add(specialEntity);
+            _unitOfWork.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var special = _unitOfWork.Specials.GetById(id);
+            _unitOfWork.Specials.Delete(special);
+            _unitOfWork.SaveChanges();
         }
 
-        public SpecialDto Get(int aboutId)
+        public SpecialDto Get(int specialId)
         {
-            throw new NotImplementedException();
+            var special =  _unitOfWork.Specials.GetById(specialId);
+            return new SpecialDto
+            {
+                Special = special
+            };
         }
 
         public SpecialListDto GetAll()
@@ -46,9 +55,19 @@ namespace Restaurantly.Services.Concrete
             };
         }
 
+        public SpecialUpdateDto GetBySpecialEdit(int specialId)
+        {
+            var special = _unitOfWork.Specials.GetById(specialId);
+            var specialUpdateDto = _mapper.Map<SpecialUpdateDto>(special);
+            return specialUpdateDto;
+          
+        }
+
         public void Update(SpecialUpdateDto dto)
         {
-            throw new NotImplementedException();
+            var specialEntity = _mapper.Map<Special>(dto);
+            _unitOfWork.Specials.Update(specialEntity);
+            _unitOfWork.SaveChanges();
         }
     }
 }
