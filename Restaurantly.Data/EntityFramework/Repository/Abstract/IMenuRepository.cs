@@ -1,4 +1,5 @@
-﻿using Restaurantly.Entity.Entity;
+﻿using Restaurantly.Entity.Dtos;
+using Restaurantly.Entity.Entity;
 using Restaurantly.Shared.Data.Repository.Abstract;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace Restaurantly.Data.EntityFramework.Repository.Abstract
 {
     public interface IMenuRepository : IGenericRepository<Menu>
     {
+        List<Menu> GetListWithMenuByCategory();
     }
 }

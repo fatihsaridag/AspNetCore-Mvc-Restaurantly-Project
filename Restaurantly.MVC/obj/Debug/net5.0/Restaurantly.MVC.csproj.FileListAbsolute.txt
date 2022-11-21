@@ -189,3 +189,10 @@ C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reservation\ReservationList.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reservation\ReservationEdit.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Reservation\ReservationAdd.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Menu\MenuList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Menu\MenuEdit.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Menu\MenuAdd.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Special\SpecialList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Special\SpecialEdit.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Special\SpecialAdd.cshtml.g.cs

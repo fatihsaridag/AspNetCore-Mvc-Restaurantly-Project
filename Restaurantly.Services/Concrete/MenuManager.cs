@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Restaurantly.Data.Abstract;
 using Restaurantly.Entity.Dtos;
+using Restaurantly.Entity.Entity;
 using Restaurantly.Services.Abstract;
 using System;
 using System.Collections.Generic;
@@ -13,23 +15,34 @@ namespace Restaurantly.Services.Concrete
     public class MenuManager : IMenuService
     {
         private readonly IUnitOfWork _unitOfWork;
-        public MenuManager(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+
+        public MenuManager(IUnitOfWork unitOfWork , IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
         public void Add(MenuAddDto dto)
         {
-            throw new NotImplementedException();
+            var menuEntity = _mapper.Map<Menu>(dto);
+            _unitOfWork.Menus.Add(menuEntity);
+            _unitOfWork.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+           var menu =  _unitOfWork.Menus.GetById(id);
+            _unitOfWork.Menus.Delete(menu);
+            _unitOfWork.SaveChanges();
         }
 
-        public MenuDto Get(int aboutId)
+        public MenuDto Get(int menuId)
         {
-            throw new NotImplementedException();
+            var menu = _unitOfWork.Menus.GetById(menuId);
+            return new MenuDto
+            {
+                Menu = menu
+            };
         }
 
         public MenuListDto GetAll()
@@ -41,9 +54,27 @@ namespace Restaurantly.Services.Concrete
             };
         }
 
+        public MenuListDto GetListWithMenuByCategory()
+        {
+           var menuswithCategory = _unitOfWork.Menus.GetListWithMenuByCategory();
+            return new MenuListDto
+            {
+                Menus = menuswithCategory
+            };
+        }
+
+        public MenuUpdateDto GetUpdate(int menuId)
+        {
+            var menu = _unitOfWork.Menus.GetById(menuId);
+            var menuUpdateDto = _mapper.Map<MenuUpdateDto>(menu); 
+            return menuUpdateDto;
+        }
+
         public void Update(MenuUpdateDto dto)
         {
-            throw new NotImplementedException();
+           var menuEntity = _mapper.Map<Menu>(dto);
+            _unitOfWork.Menus.Update(menuEntity);
+            _unitOfWork.SaveChanges();
         }
     }
 }
