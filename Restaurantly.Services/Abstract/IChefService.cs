@@ -13,6 +13,7 @@ namespace Restaurantly.Services.Abstract
         ChefListDto GetAll();
         void Add(ChefAddDto dto);
         void Update(ChefUpdateDto dto);
+        ChefUpdateDto GetByChefEdit(int id);
         void Delete(int id);
     }
 }

@@ -42,12 +42,25 @@ namespace Restaurantly.Services.Concrete
 
         public ContactListDto GetAll()
         {
-            throw new NotImplementedException();
+            var contacts = _unitOfWork.Contacts.GetList();
+            return new ContactListDto
+            {
+                Contacts = contacts
+            };
+        }
+
+        public ContactUpdateDto GetUpdateContact(int contactid)
+        {
+            var contact = _unitOfWork.Contacts.GetById(contactid);
+            var contactUpdateDto =  _mapper.Map<ContactUpdateDto>(contact);
+            return contactUpdateDto;
         }
 
         public void Update(ContactUpdateDto dto)
         {
-            throw new NotImplementedException();
+           var contactDto  =  _mapper.Map<Contact>(dto);
+          _unitOfWork.Contacts.Update(contactDto);
+          _unitOfWork.SaveChanges();
         }
     }
 }

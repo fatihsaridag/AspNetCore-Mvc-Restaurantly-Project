@@ -62,6 +62,13 @@ namespace Restaurantly.Services.Concrete
             };
         }
 
+        public AboutUpdateDto GetbyAboutEdit(int aboutId)
+        {
+            var aboutEntity = _unitOfWork.Abouts.GetById(aboutId);
+            var aboutUpdateDto = _mapper.Map<AboutUpdateDto>(aboutEntity);
+            return aboutUpdateDto;
+        }
+
         public void Update(AboutUpdateDto aboutUpdateDto)
         {
             var about = _mapper.Map<About>(aboutUpdateDto);

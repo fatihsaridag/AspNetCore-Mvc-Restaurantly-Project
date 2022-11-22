@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid pt-4 px-4 ">
+    <div class="row g-4 mb-3">
+        <div class="col-sm-6 col-xl-4">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2"> Rezervasyon Sayısı</p>
+                    <h5 class="mb-0">@ViewData["ReservationCount"] Rezervasyon</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-4">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Misafir Sayısı</p>
+                    <h5 class="mb-0">@ViewData["UserCount"] Kullanıcı</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-4">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-area fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Menü Sayısı</p>
+                    <h5 class="mb-0">@ViewData["MenuCount"] Menü</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-striped mt-4 ">
+    <h4 class="text-primary text-center mt-3"> Rezervasyon Listesi</h4>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Tarih</th>
+            <th>Kişi Sayısı</th>
+            <th>Mesaj</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reservations)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Phone</td>
+                <td>@item.Date.ToString()</td>
+                <td>@item.Count</td>
+                <td>@item.Message</td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<!-- Widgets End -->
+<!-- Footer Start -->
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light rounded-top p-4">
+        <div class="row">
+            <div class="col-12 col-sm-6 text-center text-sm-start">
+                &copy; <a href="#">Sarıdağ Restaurant </a>, Tüm hakları saklıdır.
+            </div>
+            <div class="col-12 col-sm-6 text-center text-sm-end">
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Designed By <a href="#">Fatih Sarıdağ</a>
+            </div>
+        </div>
+    </div>
+</div>

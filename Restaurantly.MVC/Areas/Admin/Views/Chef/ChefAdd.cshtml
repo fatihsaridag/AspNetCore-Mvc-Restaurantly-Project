@@ -1,0 +1,39 @@
+﻿@model ChefAddDto
+
+
+@{
+    ViewData["Title"] = "ChefAdd";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row mt-2">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+
+        <form method="post" asp-action="ChefAdd">
+            <h1 class="text-center text-primary">Şefleri Güncelleme</h1>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Job" class="control-label"></label>
+                <input asp-for="Job" class="form-control" />
+                <span asp-validation-for="Job" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Picture" class="control-label"></label>
+                <input asp-for="Picture" class="form-control" />
+                <span asp-validation-for="Picture" class="text-danger"></span>
+            </div>
+
+            <div class="form-group ">
+                <input type="submit" placeholder="Kaydet" class="btn btn-primary mt-2 btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+
