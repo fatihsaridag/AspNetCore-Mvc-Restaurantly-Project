@@ -1,0 +1,37 @@
+﻿@model ContactListDto
+
+
+
+@{
+    ViewData["Title"] = "ContactList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered table-striped mt-4 ">
+    <h3 class="text-primary text-center mt-3"> İletişim </h3>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Adı</th>
+            <th>Email Adresi</th>
+            <th>Konu</th>
+            <th>Mesaj</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Contacts)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Subject</td>
+                <td>@item.Message</td>
+                <td><a asp-area="Admin" asp-controller="Contact" asp-action="ContactEdit" asp-route-id="@item.Id" class="btn btn-outline-primary">Düzenle</a></td>
+                <td><a asp-area="Admin" asp-controller="Contact" asp-action="ContactDelete" asp-route-id="@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

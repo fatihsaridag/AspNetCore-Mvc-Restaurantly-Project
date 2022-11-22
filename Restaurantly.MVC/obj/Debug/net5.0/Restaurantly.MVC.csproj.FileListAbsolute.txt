@@ -196,3 +196,11 @@ C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Special\SpecialList.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Special\SpecialEdit.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Special\SpecialAdd.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\AboutList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\AboutEdit.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Chef\ChefList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Chef\ChefEdit.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Chef\ChefAdd.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Contact\ContactList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Contact\ContactEdit.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs

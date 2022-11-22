@@ -10,6 +10,7 @@ namespace Restaurantly.Services.Abstract
     public interface IContactService
     {
         ContactDto Get(int aboutId);
+        ContactUpdateDto GetUpdateContact(int contactid);
         ContactListDto GetAll();
         void Add(ContactAddDto dto);
         void Update(ContactUpdateDto dto);

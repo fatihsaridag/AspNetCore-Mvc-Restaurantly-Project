@@ -11,6 +11,7 @@ namespace Restaurantly.Services.Abstract
     public interface IAboutService
     {
         AboutDto Get(int aboutId);
+        AboutUpdateDto GetbyAboutEdit(int aboutId);
         AboutListDto GetAll();
         void Add(AboutAddDto dto);
         void Update(AboutUpdateDto dto);
