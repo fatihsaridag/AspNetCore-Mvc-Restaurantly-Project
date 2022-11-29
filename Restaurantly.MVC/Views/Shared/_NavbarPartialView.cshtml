@@ -20,7 +20,7 @@
         @if (User.Identity.IsAuthenticated)
         {
             <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Rezervasyon Yap</a>
-            <a href="/Login/SignOut" class="book-a-table-btn scrollto d-none d-lg-flex">Çıkış Yap</a>
+            <a asp-controller="Login" asp-action="LogOut" class="book-a-table-btn scrollto d-none d-lg-flex">Çıkış Yap</a>
         }
         else
         {

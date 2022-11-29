@@ -17,6 +17,9 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\MenuPicture\" />
+    <Folder Include="wwwroot\ChefPicture\" />
+    <Folder Include="wwwroot\SpecialPicture\" />
   </ItemGroup>
 
 </Project>

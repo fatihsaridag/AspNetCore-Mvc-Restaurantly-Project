@@ -1,6 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Restaurantly.Entity.Dtos;
+using Restaurantly.Entity.Entity;
 using Restaurantly.Services.Abstract;
+using System;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Restaurantly.MVC.Areas.Admin.Controllers
 {
@@ -18,7 +23,16 @@ namespace Restaurantly.MVC.Areas.Admin.Controllers
         public IActionResult ChefList()
         {
             var chefList = _chefService.GetAll();
+            if (chefList.Chefs.Count > 3 || chefList.Chefs.Count == 3)
+            {
+                ViewBag.status = "true";
+            }
+            else
+            {
+                ViewBag.status = "false";
+            }
             return View(chefList);
+
         }
 
 
@@ -30,10 +44,24 @@ namespace Restaurantly.MVC.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public IActionResult ChefEdit(ChefUpdateDto chefUpdateDto)
+        public async Task<IActionResult> ChefEdit(ChefUpdateDto chefUpdateDto, IFormFile picture)
         {
-            _chefService.Update(chefUpdateDto);
-            return RedirectToAction("ChefList");
+            if (ModelState.IsValid)
+            {
+                if (picture != null && picture.Length > 0)
+                {
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(picture.FileName);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ChefPicture", fileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await picture.CopyToAsync(stream);
+                        chefUpdateDto.Picture = "/ChefPicture/" + fileName;
+                    }
+                    _chefService.Update(chefUpdateDto);
+                    return RedirectToAction("ChefList");
+                }
+            }
+            return View(chefUpdateDto);
         }
 
 
@@ -50,10 +78,25 @@ namespace Restaurantly.MVC.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult ChefAdd(ChefAddDto chefAddDto)
+        public async Task<IActionResult> ChefAdd(ChefAddDto chefAddDto, IFormFile picture)
         {
-            _chefService.Add(chefAddDto);
-            return RedirectToAction("ChefList");
+            var chefList = _chefService.GetAll();
+
+            if (ModelState.IsValid)
+            {
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(picture.FileName);
+
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ChefPicture", fileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await picture.CopyToAsync(stream);
+                        chefAddDto.Picture = "/ChefPicture/" + fileName;
+                    }
+                    _chefService.Add(chefAddDto);
+                    ViewBag.success = "true";
+                    return RedirectToAction("ChefList");
+            }
+            return View(chefAddDto);
         }
 
 

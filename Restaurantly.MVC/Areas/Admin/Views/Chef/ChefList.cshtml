@@ -9,6 +9,7 @@
 
 
 
+
 <table class="table table-bordered table-striped mt-4 ">
     <h3 class="text-primary text-center mt-3"> Şef Listesi</h3>
     <thead>
@@ -28,7 +29,7 @@
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Job</td>
-                <td>@item.Picture</td>
+                <td><img  src="@item.Picture" style="width:70px; height:50px;" /></td>
                 <td><a asp-area="Admin" asp-controller="Chef" asp-action="ChefEdit" asp-route-id="@item.Id" class="btn btn-outline-primary">Düzenle</a></td>
                 <td><a asp-area="Admin" asp-controller="Chef" asp-action="ChefDelete" asp-route-id="@item.Id" class="btn btn-outline-danger">Sil</a></td>
 
@@ -38,4 +39,14 @@
     </tbody>
 </table>
 
-<a asp-area="Admin" asp-controller="Chef" asp-action="ChefAdd" class="btn btn-outline-success">Yeni Şef Ekle</a>
+
+
+@if (ViewBag.status == "true")
+{
+
+}
+else
+{
+    <a asp-area="Admin" asp-controller="Chef" asp-action="ChefAdd" class="btn btn-outline-success">Yeni Şef Ekle</a>
+        
+}
