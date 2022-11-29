@@ -11,7 +11,7 @@
     </div>
     <div class="col-md-6">
 
-        <form method="post" asp-action="MenuEdit">
+        <form method="post" asp-action="MenuEdit" enctype="multipart/form-data">
             <h1 class="text-center text-primary">Menü Güncelleme</h1>
             <input asp-for="Id" type="hidden" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>

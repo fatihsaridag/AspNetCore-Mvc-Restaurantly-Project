@@ -27,7 +27,5 @@ namespace Restaurantly.Data.EntityFramework.Contexts
         }
 
 
-
-
     }
 }

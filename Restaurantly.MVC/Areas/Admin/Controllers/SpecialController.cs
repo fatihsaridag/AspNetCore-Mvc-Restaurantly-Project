@@ -1,6 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Restaurantly.Entity.Dtos;
 using Restaurantly.Services.Abstract;
+using System;
+using System.IO;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Restaurantly.MVC.Areas.Admin.Controllers
 {
@@ -32,10 +37,26 @@ namespace Restaurantly.MVC.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public IActionResult SpecialEdit(SpecialUpdateDto specialUpdateDto)
+        public async Task<IActionResult> SpecialEdit(SpecialUpdateDto specialUpdateDto, IFormFile picture)
         {
-            _specialService.Update(specialUpdateDto);
-            return RedirectToAction("SpecialList");
+            if (ModelState.IsValid)
+            {
+                if (picture != null && picture.Length > 0)
+                {
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(picture.FileName);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/SpecialPicture", fileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await picture.CopyToAsync(stream);
+                        specialUpdateDto.Picture = "/SpecialPicture/" + fileName;
+
+                    }
+                    _specialService.Update(specialUpdateDto);
+                    return RedirectToAction("SpecialList");
+                }
+            }
+            return View(specialUpdateDto);
+
         }
 
 
@@ -45,8 +66,6 @@ namespace Restaurantly.MVC.Areas.Admin.Controllers
             return RedirectToAction("SpecialList");
         }
 
-
-
         [HttpGet]
         public IActionResult SpecialAdd()
         {
@@ -55,10 +74,23 @@ namespace Restaurantly.MVC.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public IActionResult SpecialAdd(SpecialAddDto specialAddDto)
+        public async Task<IActionResult> SpecialAdd(SpecialAddDto specialAddDto,IFormFile picture)
         {
-            _specialService.Add(specialAddDto);
-            return RedirectToAction("SpecialList");
+
+            if (ModelState.IsValid)
+            {
+                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(picture.FileName);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/SpecialPicture", fileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await picture.CopyToAsync(stream);
+                    specialAddDto.Picture = "/SpecialPicture/" + fileName;
+
+                }
+                _specialService.Add(specialAddDto);
+                return RedirectToAction("SpecialList");
+            }
+            return View(specialAddDto);
         }
 
     }

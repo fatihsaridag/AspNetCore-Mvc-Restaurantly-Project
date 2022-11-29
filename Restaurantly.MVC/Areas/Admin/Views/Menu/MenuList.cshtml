@@ -28,7 +28,7 @@
             <td>@item.Id</td>
             <td>@item.Name</td>
             <td>@item.Description</td>
-            <td>@item.Picture</td>
+            <td><img style="width:90px; height:70px;" src="@item.Picture" /></td>
             <td>@item.Price</td>
             <td>@item.Category.Name</td>
                 <td><a asp-area="Admin" asp-controller="Menu" asp-action="MenuEdit" asp-route-id="@item.Id" class="btn btn-outline-primary">Düzenle</a></td>

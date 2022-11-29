@@ -80,7 +80,7 @@ namespace Restaurantly.MVC.Controllers
                     }
                     else
                     {
-                        return View("SignIn", "Login");
+                        return RedirectToAction("SignIn", "Login");
                     }
 
                 }
@@ -103,11 +103,91 @@ namespace Restaurantly.MVC.Controllers
             return View(userLoginModel);
         }
 
-        public async Task<IActionResult> SignOut()
+        public IActionResult LogOut()
         {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            _signInManager.SignOutAsync();
+            return RedirectToAction("SignIn", "Login");
         }
 
+
+        [HttpGet]
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(PasswordResetViewModel passwordResetViewModel)
+        {
+            AppUser user = await _userManager.FindByEmailAsync(passwordResetViewModel.Email);
+
+            if (user != null)
+            {
+                //Artık token oluşturabiliriz. 
+                string passwordResetToken = _userManager.GeneratePasswordResetTokenAsync(user).Result;
+                //Linki burada gönderiyoruz kullanıcı linke tıklayınca bu url e gidecek:
+
+                string passwordResetLink = Url.Action("ResetPasswordConfirm", "Login", new  //Burada obje olarak querystring değerlerimizi veriyoruz. 
+                {
+                    userId = user.Id,
+                    token = passwordResetToken
+                }, HttpContext.Request.Scheme);
+
+                Helper.PasswordReset.PassowrdResetSendEmail(passwordResetLink, user.Email);
+                ViewBag.status = "success";
+
+            }
+            else
+            {
+                ModelState.AddModelError("", "Sistemde kayıtlı email adresi bulunamamıştır");
+            }
+
+            return View(passwordResetViewModel);
+        }
+
+
+        //Oluşturmuş oldugumuz queryStrink linkinden bu değerleri yakalıyoruz.
+        [HttpGet]
+        public IActionResult ResetPasswordConfirm(string userId , string token)
+        {
+            TempData["userId"] = userId;
+            TempData["token"] = token;
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPasswordConfirm([Bind("Password")] PasswordResetViewModel passwordResetViewModel)
+        {
+            string token = TempData["token"].ToString();
+            string userId = TempData["userId"].ToString();
+
+            AppUser user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                IdentityResult result = await _userManager.ResetPasswordAsync(user, token, passwordResetViewModel.Password);
+                if (result.Succeeded)
+                {
+                    await _userManager.UpdateSecurityStampAsync(user);
+                    TempData["passwordResetInfo"] = "Şifreniz başarıyla yenilenmiştir. Yeni şifre ile giriş yapabilirsiniz.";
+                    ViewBag.status = "success"; 
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+            }
+
+            else
+            {
+                ModelState.AddModelError("", "Hata meydana gelmiştir lüften daha sonra tekrar deneyin");
+            }
+            return View(passwordResetViewModel);
+        }
     }
 }

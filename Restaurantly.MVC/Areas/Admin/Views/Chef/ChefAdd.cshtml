@@ -11,7 +11,7 @@
     </div>
     <div class="col-md-6">
 
-        <form method="post" asp-action="ChefAdd">
+        <form method="post" asp-action="ChefAdd" enctype="multipart/form-data">
             <h1 class="text-center text-primary">Şefleri Güncelleme</h1>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Picture" class="control-label"></label>
-                <input asp-for="Picture" class="form-control" />
+                <input type="file" asp-for="Picture" class="form-control" />
                 <span asp-validation-for="Picture" class="text-danger"></span>
             </div>
 

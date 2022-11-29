@@ -103,5 +103,12 @@ namespace Restaurantly.MVC.Controllers
             return View(contactAddDto);
         }
 
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+
     }
 }

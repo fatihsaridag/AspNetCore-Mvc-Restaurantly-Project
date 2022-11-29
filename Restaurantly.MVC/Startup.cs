@@ -53,13 +53,13 @@ namespace Restaurantly.MVC
                 opts.User.AllowedUserNameCharacters = "abcçdefgðhýijklmnoöpqrsþtuüvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._";
 
 
-            }).AddEntityFrameworkStores<RestaurantlyContext>();
+            }).AddEntityFrameworkStores<RestaurantlyContext>().AddDefaultTokenProviders();
 
 
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = new PathString("/Login/SignIn");
-                options.LogoutPath = new PathString("/Home/Logout");
+                options.LogoutPath = new PathString("/Login/LogOut");
                 options.AccessDeniedPath = new PathString("/Home/AccessDenied");
                 options.Cookie = new CookieBuilder
                 {
