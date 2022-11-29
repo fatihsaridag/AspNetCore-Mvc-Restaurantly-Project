@@ -9,5 +9,6 @@ namespace Restaurantly.Entity.Entity
 {
     public  class AppRole : IdentityRole<int>
     {
+        public string RoleType { get; set; }
     }
 }

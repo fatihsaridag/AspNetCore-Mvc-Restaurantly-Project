@@ -1,0 +1,24 @@
+﻿@model List<RoleAssignViewModel>
+  @using Restaurantly.MVC.Areas.Admin.Models
+
+@{
+    ViewData["Title"] = "RoleAssign";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<hr />
+
+
+<form method="post"  asp-area="Admin" asp-controller="User" asp-action="RoleAssign">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="form-check">
+            <input asp-for="@Model[i].Exist" type="checkbox" class="form-check-input" />                @* Bu chechbox işaretli mi değil mi *@
+            <label asp-for="@Model[i].RoleId" class="form-check-label">@Model[i].RoleName</label>
+            <input type="hidden" asp-for="@Model[i].RoleName" />                                          @* Arka tarafta roleNamesini gönderiyoruz. *@
+            <input type="hidden" asp-for="@Model[i].RoleId" />                                            @* Arka tarafta role idsini gönderiyoruz. *@
+        </div>
+    }
+    <input class="btn btn-success" type="submit" value="Rol ata" />
+</form>

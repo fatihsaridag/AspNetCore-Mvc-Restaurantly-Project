@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Restaurantly.Entity.Dtos;
 using Restaurantly.Services.Abstract;
 using System;
+using System.Data;
 using System.IO;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 namespace Restaurantly.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Adminn")]
     public class SpecialController : Controller
     {
         private readonly ISpecialService _specialService;

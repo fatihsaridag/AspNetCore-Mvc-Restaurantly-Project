@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restaurantly.Entity.Dtos;
 using Restaurantly.Services.Abstract;
 
 namespace Restaurantly.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles ="Adminn")]
     public class AboutController : Controller
     {
         private readonly IAboutService _aboutService;

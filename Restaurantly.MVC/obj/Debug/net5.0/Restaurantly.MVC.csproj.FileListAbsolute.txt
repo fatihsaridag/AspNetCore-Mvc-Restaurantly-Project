@@ -208,3 +208,10 @@ C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\bin\Debug\net5.0\libma
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Login\ResetPassword.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Login\ResetPasswordConfirm.cshtml.g.cs
 C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Views\Home\AccessDenied.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\UserList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\RoleCreate.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\RoleList.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\RoleUpdate.cshtml.g.cs
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\bin\Debug\net5.0\Mapster.dll
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\bin\Debug\net5.0\Mapster.Core.dll
+C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\RoleAssign.cshtml.g.cs
