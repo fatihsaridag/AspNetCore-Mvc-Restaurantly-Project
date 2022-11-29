@@ -1,0 +1,40 @@
+﻿@using Restaurantly.Entity.Entity
+@model List<AppUser>
+
+
+
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered table-striped mt-4 ">
+    <h3 class="text-primary text-center mt-3"> Kullanıcıların Listesi</h3>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Kullanıcı Adı</th>
+            <th>Email</th>
+            <th>Roller</th>
+            <th>Rol Ata</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.SurName</td>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td user-roles="@item.Id"></td>
+                <td><a class="btn btn-outline-info" asp-area="Admin" asp-controller="User" asp-action="RoleAssign" asp-route-id="@item.Id">Rol Ata</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+

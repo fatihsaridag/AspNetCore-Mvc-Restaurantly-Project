@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restaurantly.Entity.Dtos;
 using Restaurantly.Services.Abstract;
+using System.Data;
 
 namespace Restaurantly.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Adminn")]
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;

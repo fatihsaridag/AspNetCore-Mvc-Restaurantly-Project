@@ -19,8 +19,22 @@ using Restaurantly.Entity.Dtos;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\Areas\Admin\Views\_ViewImports.cshtml"
+using Restaurantly.MVC.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\Areas\Admin\Views\_ViewImports.cshtml"
+using Restaurantly.Entity.Entity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"92c7973e0f7f1a26bf1e456f590acb7e6d515120", @"/Areas/Admin/Views/Shared/_AdminLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dbd93b4fffa333bbb845009b7606c5665a64fe33", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6425ecbd0f4419d26b50a9009bf467491f1e21f1", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Shared__AdminLayout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -58,7 +72,7 @@ Write(await Html.PartialAsync("_AdminHeadPartial"));
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92c7973e0f7f1a26bf1e456f590acb7e6d5151203397", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92c7973e0f7f1a26bf1e456f590acb7e6d5151203816", async() => {
                 WriteLiteral("\r\n        <!-- Spinner Start -->\r\n        ");
 #nullable restore
 #line 8 "C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\Areas\Admin\Views\Shared\_AdminLayout.cshtml"

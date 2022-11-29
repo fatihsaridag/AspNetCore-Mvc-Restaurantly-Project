@@ -19,8 +19,22 @@ using Restaurantly.Entity.Dtos;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\Areas\Admin\Views\_ViewImports.cshtml"
+using Restaurantly.MVC.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\fatih\source\repos\Restaurantly\Restaurantly.MVC\Areas\Admin\Views\_ViewImports.cshtml"
+using Restaurantly.Entity.Entity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"842a3e4298d7fe6f8343c2672f399a4dc5bef7bd", @"/Areas/Admin/Views/Special/SpecialList.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dbd93b4fffa333bbb845009b7606c5665a64fe33", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6425ecbd0f4419d26b50a9009bf467491f1e21f1", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Special_SpecialList : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SpecialListDto>
     #nullable disable
@@ -138,7 +152,7 @@ WriteAttributeValue("", 814, item.Picture, 814, 13, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(" style=\"width:70px; height:50px;\" /></td>\r\n                <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "842a3e4298d7fe6f8343c2672f399a4dc5bef7bd8320", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "842a3e4298d7fe6f8343c2672f399a4dc5bef7bd8739", async() => {
                 WriteLiteral("Düzenle");
             }
             );
@@ -174,7 +188,7 @@ WriteAttributeValue("", 814, item.Picture, 814, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n                <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "842a3e4298d7fe6f8343c2672f399a4dc5bef7bd11060", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "842a3e4298d7fe6f8343c2672f399a4dc5bef7bd11479", async() => {
                 WriteLiteral("Sil");
             }
             );
@@ -219,7 +233,7 @@ WriteAttributeValue("", 814, item.Picture, 814, 13, false);
 #line hidden
 #nullable disable
             WriteLiteral("    </tbody>\r\n</table>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "842a3e4298d7fe6f8343c2672f399a4dc5bef7bd14060", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "842a3e4298d7fe6f8343c2672f399a4dc5bef7bd14479", async() => {
                 WriteLiteral("Yeni Özel Menü Ekle");
             }
             );

@@ -106,7 +106,13 @@ namespace Restaurantly.MVC
                   name: "Admin",
                   areaName: "Admin",
                   pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
-                   );    
+                   );
+
+                //endpoints.MapControllerRoute(
+                //        name: "MyArea",
+                //        pattern : "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                //    );
+
 
                 endpoints.MapDefaultControllerRoute();
             });

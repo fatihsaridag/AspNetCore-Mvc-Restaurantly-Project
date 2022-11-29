@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Restaurantly.Data.EntityFramework.Contexts;
 using Restaurantly.Services.Abstract;
+using System.Data;
 using System.Linq;
 
 namespace Restaurantly.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Adminn")]
     public class DashboardController : Controller
     {
         private readonly IReservationService _reservationService;
